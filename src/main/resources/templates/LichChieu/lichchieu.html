@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinemas</title>
+    <link rel="stylesheet" th:href="@{/assets/font/fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/nav.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/header.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lichchieu/lichchieu.css}">
+
+</head>
+
+<body>
+
+<nav class="" id="mySidebar">
+    <div class="inf_web">
+        <div class="logo">
+            <img th:src="@{/assets/image/LOGO.jpg}">
+        </div>
+        <h4><b>CINEMAS MANAGER</b></h4>
+    </div>
+    <div class="menu">
+        <ul class="sub-menu">
+            <li class="thongke_nav"><a href="/admin/phim" class="sub-menu_items"><i class="icon fa-solid fa-film"></i>PHIM</a>
+                <ul class="sub-nav">
+                    <li><a href="/admin/quanliphim">Quản lí phim</a></li>
+                </ul>
+            </li>
+            <li class="thongke_nav"><a href="/admin/lichchieu" class="sub-menu_items"><i class="icon fa-solid fa-calendar-days"></i>LỊCH CHIẾU
+                    PHIM</a>
+                    <ul class="sub-nav">
+                        <li><a href="/admin/quanlilichchieu">Quản lí lịch chiếu</a></li>
+                    </ul>
+            </li>
+            <li class="thongke_nav"><a href="" class="sub-menu_items"><i class="icon fa-solid fa-chart-line"></i>THỐNG KÊ</a>
+                <ul class="sub-nav">
+                    <li><a href="/admin/thongkephim">Thống kê phim</a></li>
+                    <li><a href="/admin/thongkenhanvien">Thống kê nhân viên</a></li>
+                </ul>
+            </li>
+            <li><a href="/admin/canhan" class="sub-menu_items"><i class="icon fa-solid fa-user"></i>CÁ NHÂN</a>
+            </li>
+            <li><a href="/admin/nhanvien" class="sub-menu_items"><i class="icon fa-solid fa-people-group"></i>NHÂN VIÊN</a></li>
+            <li><a href="/login" class="sub-menu_items"><i class="icon fa-solid fa-arrow-right-from-bracket"></i>ĐĂNG XUẤT</a></li>
+        </ul>
+    </div>
+</nav>
+
+    <!-- !PAGE CONTENT! -->
+    <header class="ml300">
+        <h1>VIP CINEMAS</h1>
+    </header>
+    <div class="main ml300">
+    <div class="option col-third-gird">
+        <div th:each="lichchieudisplay : ${danhSachKhungGio}" class=" path_Third">
+            <div class="image">
+                <img th:src="${lichchieudisplay.AnhPhim}" alt="Norway">
+            </div>
+            <div class="film">
+                <h3 th:text="${lichchieudisplay.TenPhim}"></h3>
+                <p>Đạo diễn: <span class="daodien" th:text="${lichchieudisplay.DaoDien}"></span></p>
+                <hr>
+                <p>Ngày chiếu: <span class="daodien" th:text="${#dates.format(lichchieudisplay.NgayChieu, 'yyyy-MM-dd')}"></span></p>
+                <span class="times" th:text="${lichchieudisplay.TGBatDau}"></span>
+
+            </div>
+        </div>
+        <div class="center page">
+            <ul class="selection">
+                <li th:if="${currentPage > 1}"><a th:href="@{'?pageNo='+${currentPage - 1}}" class="items">«</a></li>
+                <li th:each = "i:${#numbers.sequence(1,totalPage)}" th:classappend="${currentPage == i ? 'background' : ''}" ><a th:href="@{'?pageNo='+${i}}" th:text ="${i}" class="items" ></a></li>
+                <li th:if="${currentPage < totalPage}"><a th:href="@{'?pageNo='+${currentPage + 1}}" class="items">»</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+    <address class="ml300">
+
+        <div class="col-third-gird">
+
+		<div class="members">
+                <h3>THÀNH VIÊN</h3>
+                <p>Nguyễn Văn Toàn</p>
+                <p>Nguyễn Đức Thắng</p>
+                <p>Lê Thành Ý</p>
+                <p>Hồ Văn Thanh</p>
+                <p>Lê Thị Huyền Thương</p>
+         </div>
+
+
+            <div>
+
+                <h3>BLOG POSTS</h3>
+
+                <div class="footer_poster">
+
+                    <img th:src="@{/assets/IMAGE/ft1.jpg}" style="width:45%;" class="w3-round"><br><br>
+
+
+                </div>
+
+                <h4><b>Thank you!!!</b></h4>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Địa điểm</h3>
+
+                <div>
+
+                    <span>Đà Nẵng</span>
+
+                    <span>Nha Trang</span>
+
+                    <span>Tp.Hồ Chí Minh</span>
+
+                    <span>Hà Nội</span>
+
+                    <span>Cần Thơ</span>
+
+                    <span>Hải Phòng</span>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </address>
+    <footer class="ml300">
+        <p>Kết nối với chúng tôi</p>
+        <div class="ficon1">
+            <a href="https://www.facebook.com/thang308" target="_blank"><i class="icon fa-brands fa-square-facebook"></i></a>
+        </div>
+        <div class="ficon2">
+            <a href="https://www.instagram.com/ducthang_308/" target="_blank"><i class="icon fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="ficon3">
+            <a href="#" target="_blank"><i class="icon fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="ficon4">
+            <a href="#" target="_blank"><i class="icon fa-brands  fa-twitter"></i></a>
+        </div>
+        <div class="ficon5">
+            <a href="#" target="_blank"><i class="icon fa-regular fa-envelope"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

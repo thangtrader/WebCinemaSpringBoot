@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/font/fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/event.css">
+
+</head>
+
+<body>
+    <nav class="" id="mySidebar"><br>
+        <div class="inf_web">
+            <div class="logo">
+                <img src="/image/LOGO.jpg"><br><br>
+
+            </div>
+            <h4><b>CINEMAS MANAGER</b></h4>
+
+        </div>
+        <div class="menu">
+            <ul class="sub-menu">
+                <li><a href="/html/phim/phim.html" class="sub-menu_items"><i class="icon fa-solid fa-film"></i>PHIM</a>
+                    
+                </li>
+                <li><a href="/html/lichchieu.html" class="sub-menu_items"><i class="icon fa-solid fa-calendar-days"></i>LỊCH CHIẾU
+                        PHIM</a>
+                </li>
+                <li class="thongke_nav"><a href="#contact" class="sub-menu_items"><i class="icon fa-solid fa-chart-line"></i>THỐNG KÊ</a>
+                    <ul class="sub-nav">
+                        <li><a href="/html/thongke/thongkePhim.html">Thống kê phim</a></li>
+                        <li><a href="/html/thongke/thongkeNhanVien.html">Thống kê nhân viên</a></li>
+                    </ul>
+                </li>
+                <li><a href="/html/canhan.html" class="sub-menu_items"><i class="icon fa-solid fa-user"></i>CÁ NHÂN</a></li>
+                <li><a href="/html/nhanvien.html" class="sub-menu_items"><i class="icon fa-solid fa-people-group"></i>NHÂN VIÊN</a></li>
+                <li><a href="/html/login.html" class="sub-menu_items"><i class="icon fa-solid fa-arrow-right-from-bracket"></i>ĐĂNG XUẤT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- !PAGE CONTENT! -->
+    <header class="ml300">
+        <h1>VIP CINEMAS</h1>
+    </header>
+    <div class="main ml300">
+        <div class="table">
+            <div class="">
+                <table id="example1" class="table table-bordered table-striped dataTable" role="grid"
+                    aria-describedby="example1_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending"
+                                style="width: 209.062px;">Mã phim</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="Browser: activate to sort column ascending" style="width: 256.663px;">Tên
+                                phim
+                            </th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="Platform(s): activate to sort column ascending" style="width: 227.35px;">
+                                đạo diễn</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="Engine version: activate to sort column ascending"
+                                style="width: 179.262px;">
+                                Engine version</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending" style="width: 128.863px;">CSS
+                                grade</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1"
+                                aria-label="CSS grade: activate to sort column ascending" style="width: 100px;"> active
+                            </th>
+                        </tr>
+                        <tr th:each="phim : ${phim}">
+                            <td th:text="${phim.MaPhim}" ></td>
+                            <td th:text="${phim.TenPhim}" ></td>
+                            <td th:text="${phim.ThoiLuong}" ></td>
+                            <td th:text="${phim.QuocGia}" ></td>
+                            <td>
+                                <span th:text="${#dates.format(phim.NamSanXuat, 'yyyy/MM/dd')}"></span>
+                            </td>
+                            <td th:text="${phim.DoTuoiXem}" ></td>
+                            <td th:text="${phim.theLoaiPhim.tenTheLoaiPhim}" ></td>
+                            <td th:text="${phim.DaoDien}" ></td>
+                            <td>
+                                <a href="" class="btn_sua">
+                                    Sửa
+                                </a>
+                            </td>
+    
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="click">
+            <a class="" href="/html/phim/themphim.html">Thêm phim</a>
+        </div>
+    </div>
+    <address class="ml300">
+        <div class="col-third-gird">
+            <div>
+                <h3>FOOTER</h3>
+                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
+                    ultricies congue
+                    gravida diam non fringilla.</p>
+            </div>
+
+            <div>
+                <h3>BLOG POSTS</h3>
+                <div class="footer_poster">
+                    <img src="/IMAGE/ft1.jpg" style="width:45%;" class="w3-round"><br><br>
+
+                </div>
+                <h4><b>Thank you!!!</b></h4>
+                </ul>
+            </div>
+
+            <div>
+                <h3>POPULAR ROOM</h3>
+                <div>
+                    <span>Đà Nẵng</span>
+                    <span>Nha Trang</span>
+                    <span>Tp.Hồ Chí Minh</span>
+                    <span>Hà Nội</span>
+                    <span>Cần Thơ</span>
+                    <span>Hải Phòng</span>
+
+                </div>
+            </div>
+
+        </div>
+    </address>
+
+    <footer class="ml300">
+        <p>Kết nối với chúng tôi</p>
+        <div class="ficon1">
+            <a href="#" target="_blank"><i class="icon fa-brands fa-square-facebook"></i></a>
+        </div>
+        <div class="ficon2">
+            <a href="#" target="_blank"><i class="icon fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="ficon3">
+            <a href="#" target="_blank"><i class="icon fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="ficon4">
+            <a href="#" target="_blank"><i class="icon fa-brands  fa-twitter"></i></a>
+        </div>
+        <div class="ficon5">
+            <a href="#" target="_blank"><i class="icon fa-regular fa-envelope"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

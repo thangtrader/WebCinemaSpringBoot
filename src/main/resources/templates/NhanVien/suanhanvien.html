@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/assets/css/nav.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/footer.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/header.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/nhanvien/themnhanvien.css}">
+    <link rel="stylesheet" th:href="@{/font/fontawesome-free-6.5.2-web/fontawesome-free-6.5.2-web/css/all.min.css}">
+</head>
+
+<body>
+
+<nav class="" id="mySidebar">
+    <div class="inf_web">
+        <div class="logo">
+            <img th:src="@{/assets/image/LOGO.jpg}">
+        </div>
+        <h4><b>CINEMAS MANAGER</b></h4>
+    </div>
+    <div class="menu">
+        <ul class="sub-menu">
+            <li class="thongke_nav"><a href="/admin/phim" class="sub-menu_items"><i class="icon fa-solid fa-film"></i>PHIM</a>
+                <ul class="sub-nav">
+                    <li><a href="/admin/quanliphim">Quản lí phim</a></li>
+                </ul>
+            </li>
+            <li class="thongke_nav"><a href="/admin/lichchieu" class="sub-menu_items"><i class="icon fa-solid fa-calendar-days"></i>LỊCH CHIẾU
+                    PHIM</a>
+                    <ul class="sub-nav">
+                        <li><a href="/admin/quanlilichchieu">Quản lí lịch chiếu</a></li>
+                    </ul>
+            </li>
+            <li class="thongke_nav"><a href="" class="sub-menu_items"><i class="icon fa-solid fa-chart-line"></i>THỐNG KÊ</a>
+                <ul class="sub-nav">
+                    <li><a href="/admin/thongkephim">Thống kê phim</a></li>
+                    <li><a href="/admin/thongkenhanvien">Thống kê nhân viên</a></li>
+                </ul>
+            </li>
+            <li><a href="/admin/canhan" class="sub-menu_items"><i class="icon fa-solid fa-user"></i>CÁ NHÂN</a>
+            </li>
+            <li><a href="/admin/nhanvien" class="sub-menu_items"><i class="icon fa-solid fa-people-group"></i>NHÂN VIÊN</a></li>
+            <li><a href="/login" class="sub-menu_items"><i class="icon fa-solid fa-arrow-right-from-bracket"></i>ĐĂNG XUẤT</a></li>
+        </ul>
+    </div>
+</nav>
+    
+    <header class="ml300">
+        <h1>VIP CINEMAS</h1>
+    </header>
+    <div class="ml300">
+        <div class="fiml-header">
+            <h2>FIMLS</h2>
+        </div>
+        <div class="addFlims">
+            <div class="fimls_Information">
+                <div class="leftInfor infor">
+                    <form id="addShowForm" method="post" th:action="@{/admin/suanhanvien}" th:object="${nv}" enctype="multipart/form-data">
+                    
+                        <input type="hidden" id="tdPhim" name="idPhim" th:field="${nv.maNhanVien}">
+                        <input type="hidden" id="tdPhim" name="idPhim" th:field="${nv.anh}">
+						
+                        <label for="tenPhim">Tên nhân viên:</label>
+                        <input type="text" id="tenPhim" name="tenPhim" th:field="${nv.tenNhanVien}">
+                        
+                        	<label for="tenPhim">Ảnh phim:</label>
+	                        <input type="file" id="tenPhim" name="file" multiple>		
+	                        <img th:src="@{'/Upload/'+${nv.anh}}" width="100px">
+
+                        <label for="quocGia">Ngày sinh:</label>
+                        <input type="date" id="namsx" name="namsx" th:field="${nv.ngaySinh}">
+
+                        <label for="namsx">Giới tính:</label>
+                        <div class="form-group">
+                            <div class="radio">
+                            	<input type="radio" name="optionsRadios" id="optionsRadios1" th:field="${nv.gioiTinh}" value="Nam" checked="">
+                                <label> Nam </label>
+                            </div>
+                            <div class="radio">
+                            	<input type="radio" name="optionsRadios" id="optionsRadios2" th:field="${nv.gioiTinh}" value="Nữ" checked="">
+                                <label>Nữ </label>
+                            </div>
+                        
+                        </div>
+                        <label for="dotuoi">Địa chỉ:</label>
+                        <input type="text" id="dotuoi" name="dotuoi" th:field="${nv.diaChi}">
+                        
+                        <label for="dotuoi">Số điện thoại:</label>
+                        <input type="text" id="dotuoi" name="dotuoi" th:field="${nv.sdt}">
+                        
+                        <label for="dotuoi">Số CCCD:</label>
+                        <input type="text" id="dotuoi" name="dotuoi" th:field="${nv.cccd}">
+                        
+                        <label for="dotuoi">Tên tài khoản:</label>
+                        <input type="text" id="dotuoi" name="dotuoi" th:field="${nv.tenTaiKhoan}">
+                        
+                        <label for="dotuoi">Mật khẩu:</label>
+                        <input type="text" id="dotuoi" name="dotuoi" th:field="${nv.matKhau}">
+
+                        <label for="theloai">Tên chính sách:</label>
+                        <select id="showtime" th:field="${nv.ChinhSach}">
+                            <option th:each="cs : ${cs}" th:value="${cs.MaChinhSach}" th:text="${cs.TenChinhSach}"></option>
+                        </select>
+
+                        <label for="daodien">Chức vụ:</label>
+                        <select id="showtime" th:field="${nv.ChucVu}">
+                            <option th:each="cv : ${cv}" th:value="${cv.MaChucVu}" th:text="${cv.TenChucVu }"></option>
+                        </select>
+                        
+                        <label for="namsx">Trạng thái:</label>
+                        <div class="form-group">
+                            <div class="radio">
+                                <label> 0 <input type="radio" name="optionsRadios" id="optionsRadios1" th:field="${nv.trangThai}" value="0" checked="">
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    1 <input type="radio" name="optionsRadios" id="optionsRadios2" th:field="${nv.trangThai}" value="1">
+                                </label>
+                            </div>
+                        
+                        </div>
+                        
+                        <button type="submit" class="">Lưu</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <address class="ml300">
+
+        <div class="col-third-gird">
+
+		<div class="members">
+                <h3>THÀNH VIÊN</h3>
+                <p>Nguyễn Văn Toàn</p>
+                <p>Nguyễn Đức Thắng</p>
+                <p>Lê Thành Ý</p>
+                <p>Hồ Văn Thanh</p>
+                <p>Lê Thị Huyền Thương</p>
+         </div>
+
+
+            <div>
+
+                <h3>BLOG POSTS</h3>
+
+                <div class="footer_poster">
+
+                    <img th:src="@{/assets/IMAGE/ft1.jpg}" style="width:45%;" class="w3-round"><br><br>
+
+
+                </div>
+
+                <h4><b>Thank you!!!</b></h4>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Địa điểm</h3>
+
+                <div>
+
+                    <span>Đà Nẵng</span>
+
+                    <span>Nha Trang</span>
+
+                    <span>Tp.Hồ Chí Minh</span>
+
+                    <span>Hà Nội</span>
+
+                    <span>Cần Thơ</span>
+
+                    <span>Hải Phòng</span>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </address>
+    <footer class="ml300">
+        <p>Kết nối với chúng tôi</p>
+        <div class="ficon1">
+            <a href="https://www.facebook.com/thang308" target="_blank"><i class="icon fa-brands fa-square-facebook"></i></a>
+        </div>
+        <div class="ficon2">
+            <a href="https://www.instagram.com/ducthang_308/" target="_blank"><i class="icon fa-brands fa-instagram"></i></a>
+        </div>
+        <div class="ficon3">
+            <a href="#" target="_blank"><i class="icon fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="ficon4">
+            <a href="#" target="_blank"><i class="icon fa-brands  fa-twitter"></i></a>
+        </div>
+        <div class="ficon5">
+            <a href="#" target="_blank"><i class="icon fa-regular fa-envelope"></i></a>
+        </div>
+    </footer>
+</body>
+
+</html>

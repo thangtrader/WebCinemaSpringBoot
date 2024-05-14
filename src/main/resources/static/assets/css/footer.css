@@ -1,0 +1,139 @@
+.col-third-gird {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.ml300{
+    margin-left: 300px;
+}
+
+address {
+    padding: 32px;
+    clear :both;
+    color:white;
+    background-color: rgb(51, 52, 50);
+}
+address:first-child div {
+    column-gap: 20px;
+    text-align: left;
+    margin-right: 10px;
+}
+address h3,h4 {
+    text-align: center !important;
+    margin: 20px;
+}
+address .footer_poster {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+address .footer_poster img {
+
+    max-width: 100%;
+    height: auto;
+}
+address span{
+    display: inline-flex;
+    margin: 8px;
+    border-radius: 3px;
+    padding: 8px 8px;
+    margin-top: 8px;
+    background-color: rgb(2, 2, 2);
+}
+
+@keyframes example {
+    0% {
+        transform: rotate(-15deg);
+    }
+    15% {
+        transform: rotate(15deg);
+    }
+    25% {
+        transform: rotate(-15deg);
+    }
+    35% {
+        transform: rotate(15deg);
+    }
+    45% {
+        transform: rotate(-15deg);
+    }
+    60% {
+        transform: rotate(15deg);
+    }
+    
+}
+footer {
+    /* width:100%; */
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    color:#ddd;
+
+}
+footer [class*=ficon] {
+    font-size: 24px;
+    margin-top: 10px;
+    display: inline-flex;   
+
+}
+footer [class*=ficon] i {
+    color:#ffffff;
+    font-size:24px;
+    width:40px;  
+    height:40px;
+    border-radius: 30%;
+    line-height: 40px;
+}
+footer [class*=ficon]:hover i {
+    animation: example 0.6s linear 0s 1;
+}
+footer .ficon1:hover i {
+    background-color: #3B5998;
+    
+}
+footer .ficon2:hover i {
+    background-image: linear-gradient(45deg,
+    #8A3AB9,
+    #E95950,
+    #FCCC63,
+    #FBAD50,
+    #CD486B,
+    #4C68D7);  
+}
+footer .ficon3:hover i {
+    background-color: #ea2929;
+}
+footer .ficon4:hover i {
+    background-image: linear-gradient(-45deg,
+    #1DA1F2,
+    #1DA1F2,
+    #F5F8FA);
+}
+footer .ficon5:hover i {
+    background-color: #1DA1F2;
+}
+.refresh {
+    width:30px;
+    height:30px;
+    position: fixed;
+    bottom: 90px;
+    right:20px;
+    background-color: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding:8px;
+}
+.refresh:hover {
+    opacity: 0.8;
+}
+.refresh i {
+    color: #000;
+    font-size: 150%;
+}
+.members p{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

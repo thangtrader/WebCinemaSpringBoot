@@ -1,0 +1,88 @@
+.fiml-header {
+    background-color: #505050;
+    text-align: center;
+    padding :5px 0;
+    width:100%;
+    margin-top: -24px;
+}
+.addFlims {
+    width:900px;
+    margin: auto;
+
+    /* height:400px; */
+    background-color: #000000;
+    margin-bottom: 50px;
+    color:#ffffff;
+    z-index: 3;
+}
+
+.addFlims .fimls_Information{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: inline-flex;
+}
+.addFlims{
+    transform: 50% - translateX(50%);
+    padding-top: 24px;
+    padding-bottom: 32px;
+    width:50%;
+}
+
+.addFlims label, input{
+    display:block;
+    width:80%;
+    font-size: 18px;
+}
+.addFlims label{
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 28px;
+}
+.addFlims input{
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #CCC;
+    border: none;
+    height: 28px;
+    border-radius: 6px;
+    width: 50%;
+   
+}
+.infor p input{
+    padding-bottom: 16px;
+
+}
+
+.addFlims select{
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 28px;
+    border-radius: 8px;
+    width: 50%;
+    background-color: #CCC;
+}
+.addFlims button{
+    background-color: #ff1b1b;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 224px;
+}
+#addShowForm .form-group {
+    display: inline-flex;
+    padding-left: 32px;
+    margin-top: 8px;
+}
+#addShowForm .radio label {
+    margin-right: 32px;
+    display: inline-flex;
+    /* float: inline-start; */
+    font-size: 24px;
+    
+}
+.radio label input {
+    margin-left: 8px;
+}

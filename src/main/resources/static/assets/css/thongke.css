@@ -1,0 +1,19 @@
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 70%;
+}
+
+th, td {
+    border: 1px solid #FFF;
+    padding: 8px;
+    text-align: left;
+}
+.fiml-header {
+    background-color: #505050;
+    text-align: center;
+    padding :5px 0;
+    width:100%;
+    margin-top: -24px;
+    margin-bottom: 24px;
+}

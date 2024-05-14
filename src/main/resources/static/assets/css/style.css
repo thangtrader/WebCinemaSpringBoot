@@ -1,0 +1,126 @@
+
+/* ---body--- */
+body {
+    background-color: rgb(0, 0, 0);
+    max-width: 1600px;
+    /* margin:0; */
+}
+
+.col-third-gird {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+ main {
+    padding-bottom: 20px;
+    position: relative;
+    margin-left: 300px;
+ }
+
+
+.center {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection {
+        width: 100%;
+        padding: 16px 0;
+        overflow: hidden;
+        display: inline-block;
+        width: auto;
+}
+.selection .items {
+    margin-right: 4px;
+    padding: 2px 8px;
+    border-radius: 2px;
+    color:#ddd;
+    float: left;
+    border: none;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 18px;
+    font-family:Arial, Helvetica, sans-serif ;
+}
+.selection a:nth-child(2){
+    background-color: #ffffff;
+    color:#000;
+}
+.selection .items:hover{
+    background-color: #ffffff;
+    color:#000;
+}
+
+.addFlims {
+    width:900px;
+    /* height:400px; */
+    background-color: #fff;
+    margin-bottom: 50px;
+    color:#fff;
+    z-index: 3;
+}
+
+
+.addFlims .fimls_Information{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: inline-flex;
+}
+.fimls_Information .infor{
+    padding-left: 100px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    width:50%;
+}
+
+.fimls_Information .infor label, input{
+    display:block;
+    width:80%;
+    font-size: 18px;
+}
+.fimls_Information .infor label{
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+.fimls_Information .infor input{
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #CCC;
+    border: none;
+    height: 24px;
+   
+}
+.infor p input{
+    padding-bottom: 16px;
+
+}
+
+.fimls_Information .rightInfor select{
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 24px;
+    width: 50%;
+    background-color: #CCC;
+}
+.fimls_Information .rightInfor button{
+    background-color: #ff1b1b;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+

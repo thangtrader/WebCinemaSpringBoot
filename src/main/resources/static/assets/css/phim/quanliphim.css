@@ -1,0 +1,57 @@
+
+.fiml-header {
+    background-color: #505050;
+    text-align: center;
+    padding :5px 0;
+    width:100%;
+    margin-top: -24px;
+    margin-bottom: 24px;
+}
+.main {
+    position: relative;
+    padding-bottom: 100px;
+}
+.click {
+    position: absolute;
+    bottom: 32px;
+    right: 32px;
+    float: left;
+
+}
+.click a{
+
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: red;
+    color: #FFF;
+}
+
+.btn_sua {
+    display: block;
+    width:100%;
+    text-align: center;
+    text-decoration: none;
+    padding:4px 0;
+    margin-bottom: 4px;
+    border-radius:2px;
+    color:#fff;
+    background-color: darkcyan;
+    cursor:pointer;
+    margin-right: 8px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    border: 2px solid #FFF;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    /* background-color: #f2f2f2; */
+}

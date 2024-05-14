@@ -1,0 +1,70 @@
+.fiml-header {
+    background-color: #505050;
+    text-align: center;
+    padding :5px 0;
+    width:100%;
+    margin-top: -24px;
+}
+.addFlims {
+    width:900px;
+    margin: auto;
+
+    background-color: #000000;
+    margin-bottom: 50px;
+    color:#ffffff;
+    z-index: 3;
+}
+
+.addFlims .fimls_Information{
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: inline-flex;
+}
+.addFlims{
+    padding-left: 250px;
+    padding-top: 24px;
+    padding-bottom: 32px;
+    width:80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.addFlims label, input{
+    display:block;
+    width:50%;
+    font-size: 18px;
+}
+.addFlims label{
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 24px;
+}
+.addFlims input{
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-radius: 2px;
+    background-color: #CCC;
+    border: none;
+    height: 24px;
+    
+}
+.infor p input{
+    padding-bottom: 16px;
+
+}
+
+.addFlims select{
+    margin-bottom: 20px;
+    font-size: 16px;
+    height: 24px;
+    width: 50%;
+    background-color: #CCC;
+}
+.addFlims button{
+    background-color: #ff1b1b;
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
